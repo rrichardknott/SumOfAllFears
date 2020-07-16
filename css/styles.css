@@ -34,6 +34,14 @@ h4 #solveH4{
     text-align: center!important;
 }
 
+#solveResults{
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+    padding-top: 10%;
+    text-align: center;
+}
+
 h3 {
     text-align: justify!important;
     margin: 10% 5%;
