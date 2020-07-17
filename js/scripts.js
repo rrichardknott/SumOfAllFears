@@ -39,7 +39,7 @@
                     break;
                 } else {
                     found = false;
-                    var sweet = swal(`Nope, didn't happen.", "No numbers found to add up to your Sum Number of: ${kNumber}.`);
+                    var sweet = swal(`Nope, didn't happen. No numbers found to add up to your Sum Number of: ${kNumber}.`);
                 }                
             }
             return (found, sweet);
