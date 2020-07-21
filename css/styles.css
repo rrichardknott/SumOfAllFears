@@ -135,31 +135,32 @@ header {
         display: none;
     }
 }
+/*===============Contact===========================================*/
 
-/*===============Footer============================================*/
-#footer{
+#contact {
     background-color: black;
     color: white;
-    width: 100%;
-    margin-top: 6%;
+    padding: 3% 7%;  
 }
 
-#footerRow{
-    padding: 2% 10% 2% 10%;
+#contactButton{
+    border: 1px solid white;
+    text-transform: uppercase;
+    width: 15%;
 }
 
-#footerRow a{
-    text-decoration: none;
-    color: white;
+#contact label, #contact h2, #contact label, #contact p{
+    font-size: 28px;
 }
 
-.footerLink{
-    font-size: 26px;
+#contact form{
+    position: relative;
+    left: 17%;
 }
 
-a span{
-    color: darkorange;
-}
+
+
+
 /*=============Carousel on Solve Page==================*/
 /* Carousel base class */
 .carousel {    
