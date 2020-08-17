@@ -67,7 +67,7 @@
         });
 
     //Email Setup//
-    //emailjs.init("###");
+    emailjs.init("user_LwjM5EqrkyKKqnIS0Feds");
 
     $("#contactButton").on("click", function () {
         $("#contactButton").text("Sending...");
