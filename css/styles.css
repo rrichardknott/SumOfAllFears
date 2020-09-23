@@ -2,6 +2,10 @@
     font-family: 'Garamond', sans-serif!important;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 a.nav-link{
     color: black!important;
 }
