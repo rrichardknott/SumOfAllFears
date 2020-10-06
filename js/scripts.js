@@ -1,12 +1,44 @@
 ﻿$(document).ready(function () {    
     $("#errorAlert").hide();
     $("#errorAlertButton").hide();
+    
+    $("#kNumber, #firstNumber, #secondNumber, #thirdNumber, #fourthNumber").keypress(function (e) {
+        var keycode = (e.keycode ? event.keycode : event.which);
+        if (keycode == "13") {
+            findTheNumbers();
+        }
+    });       
 
-    $("#submitButton").click(function () {        
+    $("#submitButton").click(function () {
+        findTheNumbers();            
+    });
+
+    $("#errorAlertButton").on("click", function () {
+        $("#errorAlertButton").hide();
+        $("#kNumber").val("").focus();
+        $("#firstNumber").val("");
+        $("#secondNumber").val("");
+        $("#thirdNumber").val("");
+        $("#fourthNumber").val("");
+        $("#submitButton").show();
+        $("#clearButton").show();
+        $("#errorAlert").text("").hide();
+    });
+
+    $("#clearButton").on("click", function () {
+        $("#kNumber").val("").focus();
+        $("#firstNumber").val("");
+        $("#secondNumber").val("");
+        $("#thirdNumber").val("");
+        $("#fourthNumber").val("");
+    });        
+
+    //===my function=============//
+    function findTheNumbers() {
         var kNumber = parseInt($("#kNumber").val());
         var firstNumber = parseInt($("#firstNumber").val());
         var secondNumber = parseInt($("#secondNumber").val());
-        var thirdNumber =parseInt($("#thirdNumber").val());
+        var thirdNumber = parseInt($("#thirdNumber").val());
         var fourthNumber = parseInt($("#fourthNumber").val());
 
         // first check to see if user left any fields blank
@@ -24,12 +56,12 @@
             $("#clearButton").hide();
             $("#errorAlert").show().text("Invalid Entry (numbers only)");
             return;
-        } else {            
-            numbers = [firstNumber, secondNumber, thirdNumber, fourthNumber];            
-            var checkValue = 0;             
+        } else {
+            numbers = [firstNumber, secondNumber, thirdNumber, fourthNumber];
+            var checkValue = 0;
             for (let i = 0; i <= numbers.length - 1; i++) {
                 checkValue = kNumber - numbers[i];
-                if (numbers.includes(checkValue, i + 1)) {                    
+                if (numbers.includes(checkValue, i + 1)) {
                     found = true;
                     var sweet = swal({
                         title: "Numbers Found!",
@@ -40,71 +72,10 @@
                 } else {
                     found = false;
                     var sweet = swal(`Nope, didn't happen. No numbers found to add up to your Sum Number of: ${kNumber}.`);
-                }                
+                }
             }
             return (found, sweet);
         }
-    });    
-
-        $("#errorAlertButton").on("click", function () {
-            $("#errorAlertButton").hide();
-            $("#kNumber").val("").focus();
-            $("#firstNumber").val("");
-            $("#secondNumber").val("");
-            $("#thirdNumber").val("");
-            $("#fourthNumber").val("");
-            $("#submitButton").show();
-            $("#clearButton").show();        
-            $("#errorAlert").text("").hide();
-        });
-
-        $("#clearButton").on("click", function () {
-            $("#kNumber").val("").focus();    
-            $("#firstNumber").val("");
-            $("#secondNumber").val("");
-            $("#thirdNumber").val("");
-            $("#fourthNumber").val("");
-        });
-
-    //Email Setup//
-    emailjs.init("user_LwjM5EqrkyKKqnIS0Feds");
-
-    $("#contactButton").on("click", function () {
-        $("#contactButton").text("Sending...");
-        var template_params = {
-            "subject": $("#subject").val(),
-            "message": $("#message").val(),
-            "name": $("#name").val(),
-            "email": $("#email").val()
-        };
-
-        if ($("#email").val().length < 10) {
-            swal("Email Error!, You must enter a valid email address, error");
-            $("#contactButton").text("Send");
-            return;
-        }
-
-        var service_id = "default_service";
-        var template_id = "emailtemplate1";
-        var emailSuccess = swal({
-            title: "Sent!",
-            text: "Your email to Richard was successfully sent!",
-            icon: "success",
-        });
-
-        emailjs.send(service_id, template_id, template_params).then(function () {
-            emailSuccess;
-            $("#contactButton").text("Send");
-            $("#subject").val("");
-            $("#message").val("");
-            $("#name").val("");
-            $("#email").val("");
-        }, function (err) {
-            swal("Error! Email not sent", "\r\n Response:\n " + JSON.stringify(err), "error");
-            $("#contactButton").text("Send");
-        });
-        return false;
-    });
-
+    }
+    
 });
-
