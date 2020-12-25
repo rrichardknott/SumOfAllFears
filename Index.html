@@ -8,6 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/prism.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
@@ -16,142 +19,204 @@
 </head>
 
 <body>
+    
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top h4">
+            <div class="container">
+                <a class="navbar-brand" href="/Index.html"> <img src="images/sumOfAllFears.jpg" id="image" alt="Alternate Text" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="mr-5 fas fa-bars" id="navHamburgerMenu"></i>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-top h4">
-        <div class="container">
-            <a class="navbar-brand" href="/Index.html"> <img src="images/sumOfAllFears.jpg" id="image" alt="Alternate Text" /></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/Index.html">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Solve.html">Try it Out</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Code.html">Code</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/rrichardknott/SumOfAllFears">Github</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://richardknottportfolio.netlify.app">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://richardknottblog.azurewebsites.net">My Blog</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Page Content -->
-    <header>
-        <div class="overlay"></div>
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
-        </video>
-        <div class="container h-100">
-            <div class="d-flex h-100 text-center align-items-center">
-                <div class="w-100 text-white">
-                    <h1 class="display-3">This is the sum of all fears</h1>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/Index.html#textContainer">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#myCarousel">Try it Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Code.html">Code</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/rrichardknott/SumOfAllFears">Github</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://richardknottportfolio.netlify.app">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://richardknottblog.azurewebsites.net">My Blog</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </header>
+        </nav>
 
-    <div class="container" id="mainContainer">
-        <div class="row">
-            <div class="col-lg-12 text-center">
+        <!-- Page Content -->
+        <header id="videoContainer">
+            <div class="overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+            </video>
+            <div class="container h-100">
+                <div class="d-flex h-100 text-center align-items-center">
+                    <div class="w-100 text-center text-white">
+                        <h1 class="display-3" id="mainText">This is the sum of all fears</h1>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div id="textContainer" class="container text-center">
                 <h3>The Sum of All Fears project is a program that demonstrates whether or not two numbers within an array of numbers add up to the number a user enters.  For example, if the user enters the number 62 the program will search the array of numbers and identify whether a 30 and 32, or 20 and 42, or 13 and 49, etc. are present in the array.  The program will let the user know if a pair of numbers were found to add up to the number entered.</h3>
             </div>
+
+            <div class="mb-5 container" id="carouselNumbersContainer">
+                <!--======================CAROUSEL STARTS-->
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h1>enter your numbers below</h1>
+                                    <p>No Letters or Blanks</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-1 carousel-item active">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h1>enter your numbers below</h1>
+                                    <p>The first number (Sum-Number) will be the total of any other two numbers .</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--=======================CAROUSEL ENDS-->
+                <div class="row">
+                    <div class="col-10 offset-1">
+                        <div class="row" id="rowNumbers">
+                            <div class="col">
+                                <input type="text" class="form-control animate__animated animate__backInLeft" placeholder="Sum-Number" id="kNumber" />
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control animate__animated animate__bounce animate__delay-1s" placeholder="Any Number" id="firstNumber" />
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control animate__animated animate__backInLeft" placeholder="Any Number" id="secondNumber" />
+                            </div>
+
+                            <div class="col">
+                                <input type="text" class="form-control animate__animated animate__backInLeft" placeholder="Any Number" id="thirdNumber" />
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control animate__animated animate__backInLeft" placeholder="Any Number" id="fourthNumber" />
+                            </div>
+                        </div>
+
+
+                        <div class="row text-center" id="rowbuttons">
+                            <div class="col">
+                                <h2 id="errorAlert">You entered an invalid number.</h2>
+                                <button id="errorAlertButton" class="btn btn-warning btnSubmitClearAlert">Reset</button>
+                                <button type="submit" id="submitButton" class="btn btn-primary btnSubmitClearAlert">Submit</button>
+                            </div>
+                            <div class="col">
+                                <button type="submit" id="clearButton" class="btn btn-success btnSubmitClearAlert">Clear</button>
+                            </div>
+                        </div>
+
+                    </div><!--end column-10-offset-1-->
+                </div><!--end row-->
+            </div><!--carouselnumberscontainerends-->
         </div>
-    </div><!--end container-->
-    <!--Section: Contact v.2-->
-    <section class="container-fluid" id="contact">
-        <!--Section heading-->
-        <h2 class="font-weight-bold text-center my-4" id="contactMe">CONTACT ME</h2>
-        <!--Section description-->
-        <p class="text-center w-responsive mx-auto mb-5"> Do you have any questions? Please do not hesitate to contact me directly. I will respond to your <br> email within a matter of hours to help you.</p>
+        <!--Section: Contact v.2-->
+        <section class="container-fluid" id="contact">
+            <!--Section heading-->
+            <h2 class="font-weight-bold text-center my-4" id="contactMe">CONTACT ME</h2>
+            <!--Section description-->
+            <p class="text-center w-responsive mx-auto mb-5"> Do you have any questions? Please do not hesitate to contact me directly. I will respond to your <br> email within a matter of hours to help you.</p>
 
-        <div class="row">
-
-            <!--Grid column-->
-            <div class="col-md-9 mb-md-0 mb-5>">
-                <form>
-                    <!--id="contact-form" name="contact-form"-->
-                    <!--Grid row-->
-                    <div class="row">
-                        <!--Grid column-->
-                        <div class="col-md-6">
-                            <div class="md-form mb-0">
-                                <input type="text" id="name" name="name" class="form-control">
-                                <label for="name" class="">Your name</label>
-                            </div>
-                        </div>
-                        <!--Grid column-->
-                        <!--Grid column-->
-                        <div class="col-md-6">
-                            <div class="md-form mb-0">
-                                <input type="text" id="email" name="email" class="form-control" required />
-                                <label for="email" class="">Your email</label>
-                            </div>
-                        </div>
-                        <!--Grid column-->
-                    </div>
-                    <!--Grid row-->
-                    <!--Grid row-->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="md-form mb-0">
-                                <input type="text" id="subject" name="subject" class="form-control">
-                                <label for="subject" class="">Subject</label>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Grid row-->
-                    <!--Grid row-->
-                    <div class="row">
-
-                        <!--Grid column-->
-                        <div class="col-md-12">
-
-                            <div class="md-form">
-                                <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                                <label for="message">Your message</label>
-                            </div>
-
-                            <div class="text-center text-md-left">
-                                <a class="btn btn-info'" id="contactButton">Send</a>
-                            </div><br />
-                            <!--ReCaptcha Starts-->
-                            <div class="g-recaptcha" data-sitekey="6LeBG8AZAAAAACRDZ28ak1Mo8trMZdmQ8IaFV1xn"></div>
-                            <!--ReCaptcha Ends-->
-                            <div class="status"></div>
-                        </div>
-
-                    </div>
-                    <!--Grid row-->
-                </form>
-
+            <div class="row">
 
                 <!--Grid column-->
-                <!--Grid column-->
+                <div class="col">
+                    <form>
+                        <!--id="contact-form" name="contact-form"-->
+                        <!--Grid row-->
+                        <div class="row">
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="name" name="name" class="form-control">
+                                    <label for="name" class="">Your name</label>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+                            <!--Grid column-->
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="email" name="email" class="form-control" required />
+                                    <label for="email" class="">Your email</label>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                        <!--Grid row-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="subject" name="subject" class="form-control">
+                                    <label for="subject" class="">Subject</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Grid row-->
+                        <!--Grid row-->
+                        <div class="row">
 
+                            <!--Grid column-->
+                            <div class="col-md-12">
+
+                                <div class="md-form">
+                                    <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                    <label for="message">Your message</label>
+                                </div>
+
+                                <div class="text-center">
+                                    <a class="btn btn-info'" id="contactButton">Send</a>
+                                </div><br />
+                                <!--ReCaptcha Starts-->
+                                <div class="g-recaptcha" data-sitekey="6LeBG8AZAAAAACRDZ28ak1Mo8trMZdmQ8IaFV1xn"></div>
+                                <!--ReCaptcha Ends-->
+                                <div class="status"></div>
+                            </div>
+
+                        </div>
+                        <!--Grid row-->
+                    </form>
+
+
+                    <!--Grid column-->
+                    <!--Grid column-->
+
+                </div>
             </div>
-        </div>
-    </section>
-    <!--Section: Contact v.2-->
-
+        </section>
+        <!--Section: Contact v.2-->
+    
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
     <script src="js/popper.min.js"></script>

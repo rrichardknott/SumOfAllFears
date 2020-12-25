@@ -81,7 +81,6 @@
     <Content Include="js\prism.js" />
     <Content Include="js\scripts.js" />
     <Content Include="js\sweetalert.min.js" />
-    <Content Include="Solve.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
